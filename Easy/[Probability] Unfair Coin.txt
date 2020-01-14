@@ -1,0 +1,14 @@
+/*
+There is a fair coin (one side heads, one side tails) and an unfair coin (both sides tails). You pick one at random, flip it 5 times, and observe that it comes up as tails all five times. What is the chance that you are flipping the unfair coin?
+*/
+
+If F is picking the fair coin and F' the unfair coin, then p(F) = p(F') = 1/2
+If T is getting five tails in a row, then p(T|F) = 1/2 ^ 5 = 1/32 and p(T|F') = 1
+
+So, the chance of having picked the unfair coin knowing we got five tails in a row is:
+	p(F'|T)	= p(T|F') * p(F') / p(T)
+					= p(T|F') * p(F') / [p(T|F') * p(F') + p(T|F) * p(F)]
+					= 1 * 1/2 / (1 * 1/2 + 1/32 * 1/2)
+					= 1/2 / 33/64
+					= 32/33
+					= 96.97%
